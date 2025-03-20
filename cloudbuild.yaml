@@ -34,6 +34,8 @@ steps:
       - '--region=$_DEPLOY_REGION'
       - '--quiet'
       - '--allow-unauthenticated'
+      - '--set-env-vars="DB_HOST=34.154.230.2,DB_NAME=image_catalog,DB_USER=appmod-phpapp-user"'
+      - '--set-secrets="DB_PASS=php-amarcord-db-pass:latest"'
     env: # https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values=
     # copying RAILS_ENV approach.
     - PHP_ENV=development
@@ -61,8 +63,9 @@ steps:
 #        --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,php-amarcord-github-user=$_GITHUB_USER,devfest-city=$_DEVFEST_CITY
       - '--region=$_DEPLOY_REGION'
       - '--quiet'
-      # Note to self: non va col services..
       - '--allow-unauthenticated'
+      - '--set-env-vars="DB_HOST=34.154.230.2,DB_NAME=image_catalog,DB_USER=appmod-phpapp-user"'
+      - '--set-secrets="DB_PASS=php-amarcord-db-pass:latest"'
     env: # https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values=
     # copying RAILS_ENV approach.
     - PHP_ENV=production
