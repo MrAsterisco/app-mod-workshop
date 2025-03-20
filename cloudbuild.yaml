@@ -65,7 +65,7 @@ steps:
       - '--quiet'
       - '--allow-unauthenticated'
       - '--set-env-vars="DB_HOST=34.154.230.2,DB_NAME=image_catalog,DB_USER=appmod-phpapp-user"'
-      - '--set-secrets="DB_PASS=php-amarcord-db-pass:1"'
+      - '--set-secrets="DB_PASS=php-amarcord-db-pass"'
     env: # https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values=
     # copying RAILS_ENV approach.
     - PHP_ENV=production
